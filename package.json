@@ -1,0 +1,85 @@
+{
+  "name": "rails5-webpack-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Rails 5 + Webpack + React Boilerplate",
+  "main": "app/assets/javascripts/application.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.js --devtool source-map --progress --colors --hot --inline --content-base=./",
+    "start": "concurrently --kill-others --raw 'bundle exec rails s' 'npm run dev'",
+    "test:js": "jest",
+    "test:js:watch": "jest --watch --notify",
+    "test:rails": "bundle exec rspec",
+    "test": "npm run test:rails --silent && npm run test:js --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digital-telepathy/rails5-webpack-react-boilerplate.git"
+  },
+  "author": "kynatro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digital-telepathy/rails5-webpack-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/digital-telepathy/rails5-webpack-react-boilerplate#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel-core": "^6.14.0",
+    "babel-jest": "^14.1.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "concurrently": "^2.2.0",
+    "css-loader": "^0.24.0",
+    "dotenv": "^2.0.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "jest-cli": "^14.1.0",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.11.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-hot-loader": "^1.3.0",
+    "react-test-renderer": "^15.3.1",
+    "sass-loader": "^4.0.0",
+    "stats-webpack-plugin": "^0.4.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
+  },
+  "jest": {
+    "automock": false,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/vendor/"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "lib/assets",
+      "vendor/assets/javascripts"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "<rootDir>/lib/assets/mock_styles.js",
+      "^.+\\.(jpe?g|png|gif|svg|woff|svg|ttf|eot)$": "<rootDir>/lib/assets/mock_file.js"
+    },
+    "modulePaths": [
+      "<rootDir>/app/assets/javascripts",
+      "<rootDir>/lib/assets",
+      "<rootDir>/vendor/assets/javascripts"
+    ],
+    "testPathDirs": [
+      "app/assets/javascripts",
+      "lib/assets"
+    ],
+    "testPathIgnorePatterns": [
+      "/public/",
+      "/node_modules/",
+      "/vendor/"
+    ]
+  }
+}
